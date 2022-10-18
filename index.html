@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+        button{
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body onclick="brainCell()">
+    <button >run</button>
+</body>
+<script>
+  let letters = "0123456789";
+  let color = "";
+  let i
+ 
+let brainCell =()=>{
+    for (let i = 0; i < 6; i++) {
+        let dendrite1=letters[Math.ceil(Math.random() * letters.length)];
+        let dendrite2=letters[Math.ceil(Math.random() * letters.length)];
+        dendrite1?dendrite1:dendrite1=letters[Math.ceil(Math.random() * letters.length)]; 
+        dendrite2?dendrite2:dendrite2=letters[Math.ceil(Math.random() * letters.length)]; 
+        color += dendrite1?dendrite1:dendrite2;
+    }
+    console.log(color)    
+    color = "";  
+}
+</script>
+</html>
