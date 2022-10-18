@@ -30,17 +30,19 @@
   let letters = "0123456789";
   let color = "";
   let i
- 
+ let buildDendrite= ()=>{
+return letters[Math.ceil(Math.random() * letters.length)];
+ }
 let brainCell =()=>{
-    for (let i = 0; i < 6; i++) {
-        let dendrite1=letters[Math.ceil(Math.random() * letters.length)];
-        let dendrite2=letters[Math.ceil(Math.random() * letters.length)];
-        dendrite1?dendrite1:dendrite1=letters[Math.ceil(Math.random() * letters.length)]; 
-        dendrite2?dendrite2:dendrite2=letters[Math.ceil(Math.random() * letters.length)]; 
+    color = "";  
+    for ( i = 0; i < letters.length; i++) {
+        let dendrite1=buildDendrite()
+        let dendrite2=buildDendrite()
+        dendrite1?dendrite1:dendrite1=buildDendrite() 
+        dendrite2?dendrite2:dendrite2=buildDendrite() 
         color += dendrite1?dendrite1:dendrite2;
     }
     console.log(color)    
-    color = "";  
 }
 </script>
 </html>
